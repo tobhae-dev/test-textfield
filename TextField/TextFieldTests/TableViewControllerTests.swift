@@ -32,10 +32,9 @@ class TableViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.passwordField.delegate, "passwordField")
     }
     
-    // FIXME: This Test passes not
-    
     func test_becomeFirstResponder_withPasswordField_shouldMakePasswordFieldFirstResponder() {
         putInViewHierarchy(sut)
+		sut.tableView.cellForRow(at: [0,0]) // Needed only for static tableView, get the cell in the view hierarchy
         
         sut.passwordField.becomeFirstResponder()
         
